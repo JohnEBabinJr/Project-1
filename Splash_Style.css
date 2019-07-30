@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Barriecito|Thasadith&display=swap');
  
-  
+body{ 
+  background-image: url("https://media1.tenor.com/images/9bc211bce15728fe101405f6f851ed52/tenor.gif?itemid=14243222");
+  background-repeat: no-repeat;
+background-size: 100%;
+text-align: center
+}       
  h1 {
   font-size: 80px;
   font-style: 'Barriecito', cursive;
@@ -21,4 +26,11 @@ glow {
   to {
     text-shadow: 0 0 20px #fff, 0 0 30px #906cf5, 0 0 40px #8edee4, 0 0 50px #200581, 0 0 60px #1725e0, 0 0 70px #454fcf, 0 0 80px #4d77ff;
   }
+}
+h4 {
+  font-family:'Barriecito', cursive;
+  font-size: 30px;
+  color: #25ebca;
+  text-shadow: #0d30a5;
+  text-align: center;
 }
