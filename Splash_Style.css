@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Barriecito|Thasadith&display=swap');
+ 
+  
+ h1 {
+  font-size: 80px;
+  font-style: 'Barriecito', cursive;
+  color: rgb(157, 158, 240);
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+  font-family:'Barriecito', cursive;
+}
+
+@-webkit-keyframes
+glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #92cee6, 0 0 40px #c0ebe5, 0 0 50px #113163, 0 0 60px #6facc9, 0 0 70px #67dfe7;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #906cf5, 0 0 40px #8edee4, 0 0 50px #200581, 0 0 60px #1725e0, 0 0 70px #454fcf, 0 0 80px #4d77ff;
+  }
+}
