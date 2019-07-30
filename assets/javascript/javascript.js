@@ -1,50 +1,43 @@
-// function to set up page
-// function to call weather api, which will return long/latt
-// take that data and make second api call to google street view
-// return image of location
-// function that takes sea lvl and does see level math
-// function that updates display and puts it all on page
-// will it flood?
-// 
-
-
-
-
 function UpdateDisplay() {
-    //take input from users
-    //update repeating element
-    //
-}
+//append it to older table line
+//clear out search box
+// need new function to do logi for will it flood which will be called here
+};
 
 function WeatherMapAPI() {
-    var cityName = "";
-    var WMAPIquery = "https://api.openweathermap.org/data/2.5/weather?" +
-        "q=" + cityName + "&units=imperial&appid=";
-    $.ajax({
-        url: WMAPIquery,
-        method: "GET"
-    })
-        // We store all of the retrieved data inside of an object called "response"
-        .then(function (response) {
-        });
-}
+  var WMAPIquery = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=95bdc5084ebe0a4fc6446275aa22aabb";
+  $.ajax({
+    url: WMAPIquery,
+    method: "GET"
+  })
+    .then(function (response) {
 
-function StreetViewAPI() {
-    var longitude="";
-    var latitude="";
-    var SVAPIquery="";
-    $.ajax({
-        url: SVAPIquery,
-        method: "GET"
-    })
-        // We store all of the retrieved data inside of an object called "response"
-        .then(function (response) {
-        })
+      latt = response.coord.lat;
+      long = response.coord.lon;
+      console.log(latt);
+      console.log(long);
 
-}
+      initialize(latt, long);
+    });
+};
 
 
+function initialize(lat, lng) {
+  var userChosenLocation = { lat: lat, lng: lng };
+  var panorama = new google.maps.StreetViewPanorama(
+    document.getElementById("mapdrop"), {
+      position: userChosenLocation,
+      pov: {
+        heading: 34,
+        pitch: 10
+      }
+    });
+};
 
-//need an on click for user submitting data
-
-//need a way to flood city
+$("#city-search").on("click", function (event) {
+  event.preventDefault();
+  cityName = $("#location-search").val();
+  console.log(cityName);
+  WeatherMapAPI();
+  UpdateDisplay();
+});
