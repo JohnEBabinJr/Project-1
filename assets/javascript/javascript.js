@@ -1,3 +1,4 @@
+
 function UpdateDisplay() {
 //append it to older table line
 //clear out search box
@@ -41,3 +42,4 @@ $("#city-search").on("click", function (event) {
   WeatherMapAPI();
   UpdateDisplay();
 });
+
