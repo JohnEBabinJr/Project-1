@@ -4,33 +4,91 @@ body{
   background-image: url("https://media1.tenor.com/images/9bc211bce15728fe101405f6f851ed52/tenor.gif?itemid=14243222");
   background-repeat: no-repeat;
 background-size: 100%;
-text-align: center
 }       
  h1 {
   font-size: 80px;
-  font-style: 'Barriecito', cursive;
-  color: rgb(157, 158, 240);
+  color: rgb(16, 234, 241);
   text-align: center;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
   font-family:'Barriecito', cursive;
+  -webkit-animation-name: jackInTheBox;
+  animation-name: jackInTheBox;
 }
 
 @-webkit-keyframes
 glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #92cee6, 0 0 40px #c0ebe5, 0 0 50px #113163, 0 0 60px #6facc9, 0 0 70px #67dfe7;
+    text-shadow: 0 0 10px #fff, 0 0 20px rgb(11, 252, 11), 0 0 30px #3c917e, 0 0 40px #e1f8f5, 0 0 50px #113163, 0 0 60px #6facc9, 0 0 70px #67dfe7;
   }
   
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #906cf5, 0 0 40px #8edee4, 0 0 50px #200581, 0 0 60px #1725e0, 0 0 70px #454fcf, 0 0 80px #4d77ff;
+    text-shadow: 0 0 20px rgb(255, 255, 255), 0 0 30px #906cf5, 0 0 40px #8edee4, 0 0 50px #200581, 0 0 60px #1725e0, 0 0 70px #454fcf, 0 0 80px #4d77ff;
   }
 }
 h4 {
-  font-family:'Barriecito', cursive;
-  font-size: 30px;
-  color: #25ebca;
-  text-shadow: #0d30a5;
+  font-size: 35px;
+  color: rgb(16, 234, 241);
   text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+  font-family:'Thasadith', normal;
+
+}
+
+
+@-webkit-keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.jackInTheBox {
+  -webkit-animation-name: jackInTheBox;
+  animation-name: jackInTheBox;
 }
