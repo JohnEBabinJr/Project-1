@@ -1,8 +1,14 @@
+var latt;
+var long;
+var elevation;
+var cityName;
+var floodimage;
+
 
 function UpdateDisplay() {
-//append it to older table line
-//clear out search box
-// need new function to do logi for will it flood which will be called here
+  cityName = cityName.charAt(0).toUpperCase() + cityName.slice(1);
+  console.log(latt, long, elevation);
+  $("<tr><td>" + cityName + "</td><td>" + latt +" , "+long+ "</td><td>" + elevation + " feet</td></tr>").prependTo("tbody");
 };
 
 function WeatherMapAPI() {
@@ -15,16 +21,26 @@ function WeatherMapAPI() {
 
       latt = response.coord.lat;
       long = response.coord.lon;
-      console.log(latt);
-      console.log(long);
-
       initialize(latt, long);
+      elevationAPI();
     })
     .catch(function(){
       console.log("didnt work");
     })
 };
 
+function elevationAPI(){
+  
+  var EAPIquery = "https://elevation-api.io/api/elevation?points=(" +latt +","+long +")&key=a3MU4-erx2e7Geb2370r9663ORx-82";
+  $.ajax({
+    url: EAPIquery,
+    method: "GET"
+  })
+  .then(function(result){
+    elevation = result.elevations[0].elevation
+    console.log(elevation);
+  })
+};
 
 function initialize(lat, lng) {
   var userChosenLocation = { lat: lat, lng: lng };
@@ -37,12 +53,30 @@ function initialize(lat, lng) {
       }
     });
 };
+$("#flood-water").hide();
 
 $("#city-search").on("click", function (event) {
   event.preventDefault();
+  $("#flood-water").hide();
   cityName = $("#location-search").val();
-  console.log(cityName);
   WeatherMapAPI();
-  UpdateDisplay();
+  setTimeout(function() { UpdateDisplay(); }, 1000);
 });
 
+
+$("#sea-level-btn").on("click", function (event) {
+  event.preventDefault();
+  seaLevelRise = $("#sea-level").val();
+  Flood = elevation - seaLevelRise;
+
+  if (elevation > seaLevelRise){
+    //enter text into div saying that the elevation is above sea by x feet
+  }
+  else if (elevation==seaLevelRise){
+    //enter text into div saying that the water would be the same as the gorund level, but not flooded
+  }
+  else{
+    $("#flood-water").show();
+    //enter text into div saying that the elevation is below sea level by x feet
+  }
+});
