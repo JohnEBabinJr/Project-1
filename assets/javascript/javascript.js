@@ -18,7 +18,10 @@ function WeatherMapAPI() {
       console.log(long);
 
       initialize(latt, long);
-    });
+    })
+    .catch(function(){
+      console.log("didnt work");
+    })
 };
 
 
