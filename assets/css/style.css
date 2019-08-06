@@ -13,29 +13,24 @@ h1 {
   animation-name: jackInTheBox;
   -moz-animation: jackInTheBox 1s ease-in-out infinite alternate;
   }  
-#splash{
-  text-align: center;
-  margin-top: 8%;
-}  
 @-webkit-keyframes
 glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px rgb(11, 252, 11), 0 0 30px #3c917e, 0 0 40px #e1f8f5, 0 0 50px #113163, 0 0 60px #6facc9, 0 0 70px #67dfe7;
+    text-shadow: 0 0 10px rgb(236, 149, 67), 0 0 20px rgb(188, 252, 40), 0 0 30px #3c917e, 0 0 40px #e1f8f5, 0 0 50px #113163, 0 0 60px #6facc9, 0 0 70px #67dfe7;
   }
   
   to {
-    text-shadow: 0 0 20px rgb(255, 255, 255), 0 0 30px #906cf5, 0 0 40px #8edee4, 0 0 50px #200581, 0 0 60px #1725e0, 0 0 70px #454fcf, 0 0 80px #4d77ff;
+    text-shadow: 0 0 20px rgb(255, 255, 255), 0 0 30px #906cf5, 0 0 40px #8edee4, 0 0 50px #765adb, 0 0 60px #1725e0, 0 0 70px #454fcf, 0 0 80px #4d77ff;
   }
 }
 h2 {
   font-size: 35px;
   text-align: center;
-  color: #e1f8f5;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
-  font-family: 'Bahianita', cursive;
-
+    font-family:'Barriecito', cursive;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+   
 }
 @-webkit-keyframes jackInTheBox {
   from {
@@ -74,6 +69,10 @@ text-align: center }
   text-align: center;
   display: inline-block;
   font-size: 32px;
+  color: #e1f8f5;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
   font-family: 'Bahianita', cursive;
   box-shadow: 0 8px 16px 0 rgba(28, 138, 241, 0.2), 0 6px 20px 0 rgba(49, 241, 32, 0.19);}
 
